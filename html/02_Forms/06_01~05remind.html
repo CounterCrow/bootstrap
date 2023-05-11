@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>remind</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<script src="../js/jquery-3.6.4.min.js"></script>
+<style type="text/css">
+h1,h2 {
+text-align: center;
+}
+#wrap {
+  width: 300px;
+  margin: 0 auto;
+}
+</style>
+  </head>
+  <body>
+    <h1>remind!</h1>
+    <div id="wrap">
+    <form>
+  <div class="mb-3">
+    <label for="id" class="form-label">id</label>
+    <input type="text" class="form-control" id="id" aria-describedby="emailHelp" value="countercrow">
+    <div id="idHelp" class="form-text">아이디를 입력해주세요.</div>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password"value="1234@">
+    <div id="passwordHelp" class="form-text">패스워드를 입력해주세요.</div>
+  </div>
+   <div class="mb-3">
+    <label for="email" class="form-label">email</label>
+    <input type="email" class="form-control" id="email"value="tndurqh@gmail.com">
+    <div id="emailHelp" class="form-text">이메일을 입력해주세요.</div>
+  </div>
+   <div class="mb-3">
+    <label for="date" class="form-label">birth</label>
+    <input type="date" class="form-control" id="date"value="1993-04-16">
+    <div id="dateHelp" class="form-text">생년읠일을 입력해주세요</div>
+  </div>
+   <div class="mb-3">
+    <label for="color" class="form-label">color</label>
+    <input type="color" class="form-control" id="color" value="#ffffff">
+    <div id="colorHelp" class="form-text">자신을 표현하고 싶은 색상을 선택해주세요</div>
+  </div>
+  <div class="mb-3">
+    <label for="time" class="form-label">time</label>
+    <input type="time" class="form-control" id="time"  value="12:55">
+    <div id="timeHelp" class="form-text">생성 시간을 선택해주세요</div>
+  </div>
+  
+  <button type="submit" class="btn btn-primary" id="btn">회원가입</button>
+  <hr>
+  <div class="mb-3">
+    <label for="password_Old" class="form-label">password</label>
+    <input type="password" class="form-control" id="password_Old"value="">
+    <div id="password_OldHelp" class="form-text">패스워드를 입력해주세요.</div>
+  </div><div class="mb-3">
+    <label for="password_New" class="form-label">New password</label>
+    <input type="password" class="form-control" id="password_New"value="">
+    <div id="password_NewHelp" class="form-text">신규 패스워드를 입력해주세요.</div>
+  </div><div class="mb-3">
+    <label for="repassword_New" class="form-label">Re.password</label>
+    <input type="password" class="form-control" id="repassword_New"value="">
+    <div id="repassword_NewHelp" class="form-text">신규패스워드를 확인해주세요.</div>
+  </div>
+   <button type="submit" class="btn btn-primary" id="password_Btn">비밀번호 변경</button>
+   <hr>
+   <select class="form-select" aria-label="Default select example" id="country">
+  <option selected>사용하실 국가를 선택하세요</option>
+  <option value="1">한국</option>
+  <option value="2">미국</option>
+  <option value="3">일본</option>
+  <option value="4">중국</option>
+</select>
+</form>
+    
+        
+    </div>
+    
+    <script type="text/javascript">
+    	const id = $("#id").val();
+    	const email = $("#email").val();
+    	const birth = $("#date").val();
+    	const color = $("#color").val();
+    	const time = $("#time").val();
+    	
+    	$("#btn").on("click",function(){
+    		
+    		alert("아이디 : "+id+"\n생년월일 : "+birth+"\n이메일 : "+email+"\n펄스널컬러 : "+color+"\n현재시간 : "+time+"\n맞으십니까?");
+    		
+    	});
+    	
+		$("#password_Btn").on("click",function(){
+    		var pw = $("#password").val();
+    		var input_Pw = $("#password_Old").val();
+    		var pw_New = $("#password_New").val();
+    		var pw_Re = $("#repassword_New").val();
+    		
+    		if(pw !== input_Pw){
+    			alert("비밀번호가 맞지 않습니다.");
+    		}else if(input_Pw==pw_New)
+    		{
+    			alert("예전 비밀번호와 비밀번호가 일치합니다.");
+    		}else if(pw_Re !== pw_New){
+    			alert("신규비밀번호와 확인비밀번호가 일치하지 않습니다.");
+    		}else{
+    			alert("비밀번호 변경이 가능합니다.");
+    		}
+    		
+    	});
+    
+    	
+    
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
