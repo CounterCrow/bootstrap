@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>07_Checks & radios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<script src="../js/jquery-3.6.4.min.js"></script>
+<style type="text/css">
+h1,h2 {
+text-align: center;
+margin-bottom: 20px;
+}
+#wrap {
+  width: 300px;
+  margin: 100px auto;
+}
+</style>
+  </head>
+  <body>
+    <h1>07_Checks & radios</h1>
+    <div id="wrap">
+    <h2>커피 주문 메뉴</h2> 
+    <from>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="아이스아메리카노" id="menu1" name="coffee">
+  <label class="form-check-label" for="menu1">
+   아이스아메리카노
+  </label>
+</div>
+  <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="다방커피" id="menu6" name="coffee" disabled>
+  <label class="form-check-label" for="menu6">
+   다방커피
+   (안돼용!)
+  </label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="카라멜마끼아또" id="menu2" name="coffee">
+  <label class="form-check-label" for="menu2">
+    카라멜마끼아또
+  </label>
+</div>
+    <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="라떼" id="menu3"name="coffee">
+  <label class="form-check-label" for="menu3">
+   라떼
+  </label>
+</div>
+ <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="카푸치노" id="menu4"name="coffee">
+  <label class="form-check-label" for="menu4">
+   카푸치노
+  </label>
+</div>
+    <hr>
+    <h2>리뷰 서비스</h2>
+   <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="머핀" id="cookie1"name="cookie">
+  <label class="form-check-label" for="cookie1">
+   머핀
+  </label>
+  </div>
+   <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="쿠키" id="cookie2"name="cookie">
+  <label class="form-check-label" for="cookie2">
+   쿠키
+  </label>
+  </div>
+   <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="마카롱" id="cookie3"name="cookie">
+  <label class="form-check-label" for="cookie3">
+   마카롱
+  </label>
+  </div>
+   <hr>
+  <h2>매장/포장</h2>
+  <div class="form-check">
+  <input class="form-check-input" type="radio" name="place" id="HD"value="매장">
+  <label class="form-check-label" for="HD">
+   매장
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="place" id="DR" value="포장">
+  <label class="form-check-label" for="DR">
+   포장
+  </label>
+</div>
+  <button type="button" class="btn btn-primary" id="order_btn">주문</button>
+ </from> 
+    </div>
+    <script type="text/javascript">
+  
+    document.getElementById("order_btn").addEventListener("click",function(){
+//     $("#order_btn").on("click",function(){
+		var arrayCoffee = new Array();
+		var arrayCookie = new Array();
+		  
+		var obj_length = document.getElementsByName("coffee").length;
+		var obj_length2 = document.getElementsByName("cookie").length;
+		var cookieChecked = document.querySelectorAll('input[name="cookie"]:checked').length;
+    	
+    	for (var i=0; i<obj_length; i++){
+    		if (document.getElementsByName("coffee")[i].checked == true){
+    			alert("주문하신 음료는 : "+document.getElementsByName("coffee")[i].value+" 입니다.");
+    			arrayCoffee.push(document.getElementsByName("coffee")[i].value);
+    		}
+    	}
+    	for (var i=0; i<arrayCoffee.length; i++){
+    		console.log(arrayCoffee[i]);
+    	}
+    document.getElementsByName("coffee")[0].checked = false;
+    $("#cookie").prop("checked",true);
+    	if(cookieChecked>1){
+    		alert("서비스 상품은 : 하나만 골라주세요");
+    	}else{    	
+    	for (var i=0; i<obj_length2; i++){
+    		if (document.getElementsByName("cookie")[i].checked == true){
+    			alert("서비스 상품은 : "+document.getElementsByName("cookie")[i].value+" 입니다.");
+    			arrayCookie.push(document.getElementsByName("cookie")[i].value);
+    		}
+    		}
+    	}
+    	for (var i=0; i<arrayCookie.length; i++){
+    		console.log(arrayCookie[i]);
+    	}
+    	
+    	
+    	
+    });
+    	
+    	
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
