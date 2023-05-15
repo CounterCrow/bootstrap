@@ -24,13 +24,13 @@ margin-bottom: 20px;
     <h2>주문 메뉴</h2> 
     <from>
   <div class="form-check">
-  <input class="form-check-input" type="radio" value="아이스아메리카노" id="menu1" name="coffee">
+  <input class="form-check-input" type="checkBox" value="아이스아메리카노" id="menu1" name="coffee">
   <label class="form-check-label" for="menu1">
    아이스아메리카노
   </label>
 </div>
   <div class="form-check">
-  <input class="form-check-input" type="radio" value="다방커피" id="menu6" name="coffee" disabled>
+  <input class="form-check-input" type="checkBox" value="다방커피" id="menu6" name="coffee" disabled>
   <label class="form-check-label" for="menu6">
    다방커피
    (품절!!)
@@ -38,19 +38,19 @@ margin-bottom: 20px;
 </div>
 
 <div class="form-check">
-  <input class="form-check-input" type="radio" value="카라멜마끼아또" id="menu2" name="coffee">
+  <input class="form-check-input" type="checkBox" value="카라멜마끼아또" id="menu2" name="coffee">
   <label class="form-check-label" for="menu2">
     카라멜마끼아또
   </label>
 </div>
     <div class="form-check">
-  <input class="form-check-input" type="radio" value="라떼" id="menu3"name="coffee">
+  <input class="form-check-input" type="checkBox" value="라떼" id="menu3"name="coffee">
   <label class="form-check-label" for="menu3">
    라떼
   </label>
 </div>
  <div class="form-check">
-  <input class="form-check-input" type="radio" value="카푸치노" id="menu4"name="coffee">
+  <input class="form-check-input" type="checkBox" value="카푸치노" id="menu4"name="coffee">
   <label class="form-check-label" for="menu4">
    카푸치노
   </label>
@@ -76,55 +76,95 @@ margin-bottom: 20px;
   </label>
   </div>
    <hr>
-  <h2>매장/포장</h2>
-  <div class="form-check">
-  <input class="form-check-input" type="radio" name="place" id="HD"value="매장">
-  <label class="form-check-label" for="HD">
-   매장
-  </label>
+  <h2>배달/포장</h2>
+  <select class="form-select" aria-label="Default select example">
+  <option selected>주문하실 방법을 선택해 주세요.</option>
+  <option value="1">배달</option>
+  <option value="2">포장</option>
+  </select>
+<hr>
+<div class="mb-3">
+  <label for="want_Text" class="form-label">고객 요청 사항</label>
+  <br>
+  <label for="name" class="form-label">닉네임</label>
+  <input class="form-text-input" type="text" name="name" id="name" value="">
+  <textarea class="form-control" id="want_Text" rows="3" name="want" ></textarea>
 </div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="place" id="DR" value="포장">
-  <label class="form-check-label" for="DR">
-   포장
-  </label>
-</div>
+
   <button type="button" class="btn btn-primary" id="order_btn">주문</button>
-  <button type="button" class="btn btn-primary" id="btn">추천조합1</button>
+  <button type="button" class="btn btn-primary" id="btn">커스텀 메뉴1</button>
   <button type="button" class="btn btn-primary" id="chkCtrl">초기화</button>
  </from> 
     </div>
+    
+    
+    
     <script type="text/javascript">
  //쿼리문 
     //주문 버튼
- /*    $("#order_btn").on("click", function() {
+   
+    $("#order_btn").on("click", function() {
     	  var coffeeValue = $("input[name='coffee']:checked").val();
     	  var cookieValue = $("input[name='cookie']:checked").val();
-    	  alert("주문하신 제품은 [" + coffeeValue + "] 와 [" + cookieValue + "] 입니다.");
+    	  var want = $("#want_Text").val();
+    	  var name = $.trim($("#name").val());
+    	  var arrayCoffee = [];
+    	  var obj_length = $("input[name='coffee']").length;
+    		       		    
+   		    $("input[name='coffee']:checked").each(function() {
+   		        var coffeeValue = $(this).val();
+   		        arrayCoffee.push(coffeeValue);
+   		        });
+   		    
+   		    for (var i = 0; i < arrayCoffee.length; i++) {
+   		        console.log(arrayCoffee[i]);
+   		    }
+    		        	     	  
+   	  		alert("[" + name + "]님 \n 주문하신 제품은 [" + coffeeValue + "] 와 [" + cookieValue + "] 입니다.\n 요청사항 : ["+ want +"] ");
     	});
-    //추천메뉴버튼
+    //커스텀 메뉴
     $("#btn").on("click", function() {
-    	  $("input[name='coffee']").eq(3).prop("checked", true);
-    	  $("input[name='cookie']").eq(2).prop("checked", true);
-    	  alert($("input[name='coffee']:checked").val());
-    	  alert($("input[name='cookie']:checked").val());
-    	});
+    	$("input[name='coffee']").prop("checked", false);
+    	$("input[name='coffee']").eq(3).prop("checked", true);
+    	$("input[name='cookie']").eq(2).prop("checked", true);
+    	$("#name").val("countercrow");
+    	$("#want_Text").val("리뷰이벤트 참여해요!");
+     var coffeeValue = $("input[name='coffee']:checked").val();
+   	 var cookieValue = $("input[name='cookie']:checked").val();
+    	 alert("["+ coffeeValue +"]와[" +cookieValue + "]입니다.");
+    	  });
     //초기화버튼
     $("#chkCtrl").on("click", function() {
     	$("input[name='coffee']").prop("checked", false);
         $("input[name='cookie']").prop("checked", false);
-  	
+        $("#name").val(null);
+    	$("#want_Text").val(null);
     	});
-        */
-    	
- /* 
- 		스크립트문
- 		*/
- 		//주문 버튼
+        
+    	 
+  
+ 		//스크립트문
+ 		
+ 	/* 	//주문 버튼
  		document.getElementById("order_btn").addEventListener("click", function() {
     	  var coffeeValue = document.querySelector("input[name='coffee']:checked").value;
     	  var cookieValue = document.querySelector("input[name='cookie']:checked").value;
-    	  alert("주문하신 제품은 [" + coffeeValue + "] 와 [" + cookieValue + "] 입니다.");
+    	  var want = document.getElementById("want_Text").value;
+    	  var name = document.getElementById("name").value.trim();
+    	  var arrayCoffee = []
+    	  var coffeeInputs = document.getElementsByName("coffee");
+    	  
+    	  for (var i = 0; i < coffeeInputs.length; i++) {
+    		    if (coffeeInputs[i].checked) {
+    		        var coffeeValue = coffeeInputs[i].value;
+    		        arrayCoffee.push(coffeeValue);
+    		    }
+    		}
+    	  for (var j = 0; j < arrayCoffee.length; j++) {
+    		    console.log(arrayCoffee[j]);
+    		}
+    	 	  
+    	    alert("[" + name + "]님 \n 주문하신 제품은 [" + arrayCoffee + "] 와 [" + cookieValue + "] 입니다.\n 요청사항 : ["+ want +"] ");
     	});
 		//추천조합
     	document.getElementById("btn").addEventListener("click", function() {
@@ -147,7 +187,7 @@ margin-bottom: 20px;
     	    }
     	});
     	
-    	
+    	 */
     
     
     </script>
