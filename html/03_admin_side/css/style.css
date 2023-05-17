@@ -34,21 +34,23 @@ margin: 0;
 	width : 15%;
 	float: left;
 	}
+/*테이블*/	
 #table{
-	width : 75%;
+	width : 100%;
 	float: right;
 	text-align: center;
-	margin: 0 5%;
-}	
+	}	
+/*서치*/
 #searchBox{
 	width: 75%;
-	height:100px;
+	height:150px;
 	display: flex;
 	justify-content: flex-start;
+	flex-wrap: wrap;
 	box-sizing: border-box;
 	padding: 20px 10px;
 	border: 1px solid black;
-	margin: 0 5%;
+	margin: 20px 5%;
     float: right;
 	}
 .search{
@@ -59,11 +61,41 @@ margin: 0;
 	float: left;
 	margin: 10px 5px;
 }	
-.btn{
+/*메인 컨텐츠 박스*/
+#mainContent{
+	width : 75%;
+	float: right;
+	margin: 0 5%;
+}
+.btn_type1{
 	font-size:15px;
 	width:30px;
 	height: 30px;
 	text-align: center;
 	box-sizing: border-box;
 	padding: 0 1px 1px 0;
+	margin-top: 10px;
+	margin-left:  5px;
 }
+#total {
+	font-size: 20px;
+	float: left;
+	}
+#rows{
+	width: 100px;
+	float:right;
+}
+#navTable{
+	margin-left: 40%;
+	float: left;
+}
+#iconBox1{
+	float: left;
+}
+#iconBox2{
+	float: right;
+}
+
+
+
+
