@@ -129,47 +129,71 @@
   </div>
     </div>
     <h2>국가코드 관리</h2>
-    <div id="mainContent">
+    <div id="mainContentSub">
       <div class="mb-3">
         <label for="seq" class="form-label">*Seq</label>
-        <div class="col col-lg-1">
+        <div class="col col-sm-2">
           <input type="text" class="form-control " id="seq"  placeholder="자동 부여" disabled>
         </div>
       </div>
       <div class="mb-3">
-        <label for="seq" class="form-label">*국가 이름</label>
+        <label for="name" class="form-label">*국가 이름</label>
         <div class="col col-lg-3">
           <input type="text" class="form-control " id="name" >
         </div>
       </div>
       <div class="bundle">
-        <div class="mb-3">
-          <label for="seq" class="form-label">국가 이름(한글)</label>
-          <div class="col col-lg-3">
+        <div class="mb-3 bundle01_item">
+          <label for="nameKorean" class="form-label">국가 이름(한글)</label>
+          <div class="col">
             <input type="text" class="form-control " id="nameKorean" >
           </div>
         </div>
+        <div class="mb-3 bundle01_item">
+          <label for="nameEnglish" class="form-label">국가 이름(영문)</label>
+          <div class="col">
+            <input type="text" class="form-control " id="nameEnglish" placeholder="영대소문자">
+          </div>
+        </div>
+        <div class="mb-3 bundle01_item">
+          <label for="code_2digits" class="form-label">국가 코드(2자리)</label>
+          <div class="col">
+            <input type="text" class="form-control " id="code_2digits" placeholder="영대소문자">
+          </div>
+        </div>
         <div class="mb-3">
-          <label for="seq" class="form-label">국가 이름(영문)</label>
-          <div class="col col-lg-3">
-            <input type="text" class="form-control " id="nameEnglish" >
+          <label for="code_3digits" class="form-label">국가 코드(3자리)</label>
+          <div class="col">
+            <input type="text" class="form-control " id="code_3digits" placeholder="영대소문자">
           </div>
         </div>
       </div>
-      <div>
-        <div class="mb-3">
-          <label for="seq" class="form-label">국가 코드(2자리)</label>
-          <div class="col col-lg-3">
-            <input type="text" class="form-control " id="code_2digits" >
+      <div class="bundle">
+        <div class="mb-3 bundle01_item">
+          <label for="Sequence" class="form-label">순서</label>
+          <div class="Sequence">
+            <input type="text" class="form-control " id="Sequence" placeholder="숫자(0~255)">
           </div>
-        </div>
-        <div class="mb-3">
-          <label for="seq" class="form-label">국가 코드(3자리)</label>
-          <div class="col col-lg-3">
-            <input type="text" class="form-control " id="code_3digits" >
-          </div>
-        </div>
-      </div>  
+      </div>
+       <div class="col col-sm-2">
+         <label for="use" class="form-label">사용 여부</label>
+          <select class="form-select form-select-sm " aria-label=".form-select-sm " id="use">
+          <option value="1">Y</option>
+          <option value="2">N</option>
+          </select>
+        </div> 
+       </div> 
+       <div class="mb-3">
+        <label for="TextareaMemo" class="form-label">메모</label>
+        <textarea class="form-control" id="TextareaMemo" rows="3"></textarea>
+      </div> 
+      <div id="iconBox1">
+        <a href="./01_230515.html" class="btn btn-secondary btn_type1 link" tabindex="-1" role="button" aria-disabled="true"><i class="fa-solid fa-bars"></i></a>
+      </div>
+      <div id="iconBox2">
+        <button id="btnBookMark" type="button" class="btn btn-success btn_type1"><i class="fa-regular fa-bookmark"></i></button>
+      </div> 
+     </div>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
 </script>

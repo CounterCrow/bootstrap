@@ -86,7 +86,7 @@ margin: 0;
 	float:right;
 }
 #navTable{
-	margin-left: 40%;
+	margin:0 40%;
 	float: left;
 }
 #iconBox1{
@@ -95,6 +95,27 @@ margin: 0;
 #iconBox2{
 	float: right;
 }
+.btn a{
+	color: #fff;
+	text-align: center;
+	}
+
+.link{
+	padding-top: 2px;
+}
+/*서브페이지*/
+#mainContentSub{
+	width : 75%;
+	float: right;
+	margin: 0 5%;
+}
+.bundle{
+	display: flex;
+	width: 70%;
+	}
+	.bundle01_item{
+		margin-right: 10px;
+	}
 
 
 
