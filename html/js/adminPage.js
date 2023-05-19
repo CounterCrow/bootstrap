@@ -25,5 +25,30 @@ $(function() {
 });
 //모달창
 $(function() {
+  $("#btnDelete").click(function(e) {
+    e.preventDefault();
+    $(".bgModal").fadeIn();
+    $("#staticBackdrop").modal("show");
+  });
+
+  $(".btn-close, .btn-secondary").click(function() {
+    $(".bgModal").fadeOut();
+    $("#staticBackdrop").modal("hide");
+  });
   
+});
+//유효성 검사
+$(function(){
+  $("#mainContentSub").ready(function() {
+    $("#btnBookMark").click(function() {
+      var countryInput = $("#country,#code_3digits,#code_2digits,#Sequence");
+      if ($.trim(countryInput.val()) === "") {
+        countryInput.addClass("is-invalid");
+        countryInput.next().show();
+      } else {
+        countryInput.removeClass("is-invalid");
+        countryInput.next().hide();
+      }
+    });
+  });
 });

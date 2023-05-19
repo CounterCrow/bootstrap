@@ -131,56 +131,69 @@
     <h2>국가코드 관리</h2>
     <div id="mainContentSub">
       <div class="mb-3">
-        <label for="seq" class="form-label">*Seq</label>
+        <label for="seq" class="form-label"><span class="pointColor">*</span>Seq</label>
         <div class="col col-sm-2">
           <input type="text" class="form-control " id="seq"  placeholder="자동 부여" disabled>
         </div>
       </div>
       <div class="mb-3">
-        <label for="name" class="form-label">*국가 이름</label>
+        <label for="country" class="form-label"><span class="pointColor">*</span>국가 이름</label>
         <div class="col col-lg-3">
-          <input type="text" class="form-control " id="name" >
+          <input type="text" class="form-control" id="country">
+          <div class="invalid-feedback">
+            국가의 이름을 입력해 주세요.
+          </div>
         </div>
       </div>
       <div class="bundle">
         <div class="mb-3 bundle01_item">
-          <label for="nameKorean" class="form-label">국가 이름(한글)</label>
+          <label for="conturyKorean" class="form-label">국가 이름(한글)</label>
           <div class="col">
-            <input type="text" class="form-control " id="nameKorean" >
+            <input type="text" class="form-control " id="conturyKorean" >
           </div>
         </div>
         <div class="mb-3 bundle01_item">
-          <label for="nameEnglish" class="form-label">국가 이름(영문)</label>
+          <label for="conturyEnglish" class="form-label">국가 이름(영문)</label>
           <div class="col">
-            <input type="text" class="form-control " id="nameEnglish" placeholder="영대소문자">
+            <input type="text" class="form-control " id="conturyEnglish" placeholder="영대소문자">
           </div>
         </div>
         <div class="mb-3 bundle01_item">
-          <label for="code_2digits" class="form-label">국가 코드(2자리)</label>
+          <label for="code_2digits" class="form-label"><span class="pointColor">*</span>국가 코드(2자리)</label>
           <div class="col">
             <input type="text" class="form-control " id="code_2digits" placeholder="영대소문자">
+            <div class="invalid-feedback">
+              코드를 입력해주세요.
+            </div>
           </div>
         </div>
         <div class="mb-3">
-          <label for="code_3digits" class="form-label">국가 코드(3자리)</label>
-          <div class="col">
+          <label for="code_3digits" class="form-label"><span class="pointColor">*</span>국가 코드(3자리)</label>
+            <div class="col">
             <input type="text" class="form-control " id="code_3digits" placeholder="영대소문자">
+            <div class="invalid-feedback">
+              코드를 입력해주세요.
+            </div>
           </div>
         </div>
       </div>
       <div class="bundle">
         <div class="mb-3 bundle01_item">
-          <label for="Sequence" class="form-label">순서</label>
+          <label for="Sequence" class="form-label"><span class="pointColor">*</span>순서</label>
           <div class="Sequence">
             <input type="text" class="form-control " id="Sequence" placeholder="숫자(0~255)">
+            <div class="invalid-feedback">
+              순서를 입력해주세요.
+            </div>
           </div>
       </div>
        <div class="col col-sm-2">
-         <label for="use" class="form-label">사용 여부</label>
+         <label for="use" class="form-label"><span class="pointColor">*</span>사용 여부</label>
           <select class="form-select form-select-sm " aria-label=".form-select-sm " id="use">
           <option value="1">Y</option>
           <option value="2">N</option>
           </select>
+          
         </div> 
        </div> 
        <div class="mb-3">
@@ -195,6 +208,8 @@
       </div> 
      </div>
     </div>
+ 
+<script src="../js/adminPage.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
 </script>
 </body>
